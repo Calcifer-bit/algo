@@ -1,12 +1,12 @@
 
-# 1
+ 
 Time complexity, Array, Math 
 Binary Search , String, Bit Manuplation 
 Linked List, Two potinters , Stacks and Queue
 Heap and Maps , Tree 
 Graph, 
 
-# 2
+ 
 Divide & Conquer ( Insertion sort/ Merge Sort ) 
 Backtracking
 Tree traverse 
@@ -23,11 +23,13 @@ SSH , SSL Encryption , Public Key , Cipher, AES256, SHA2
 
 #Cache 
 Redis, Memcache, Nginx static Cache 
+
 #Web server 
+tomcat session manager 
 
 #DB
 Mysql, Ms SQL, Oracle , PL/SQL
-Postgre
+PostgreSQL
 
 #NodeJS - Angular
 NPM Package, package.json build 
@@ -36,8 +38,6 @@ NPM Package, package.json build
 Maven Build , Tomcat deployment 
 
 #Python 
-
-# Commands 
-
+ 
 
 
