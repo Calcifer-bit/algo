@@ -1,7 +1,7 @@
 
  
 
-Linear Data Structures:
+  Data Structures:
 
 1. Array
 2. Linked List : reduce the space wastage Linked List is formed which adds a node only when a new element is introduced. Insertions and deletions also become easier with linked list.One big drawback of linked list is, random access is not allowed
@@ -25,8 +25,15 @@ each node has at most two children, It is implemented mainly using Links.They ar
 For example in implementation in E- commerce websites where a new product is added or product goes out of stock and all products are lised in sorted order.
 
 7. Binary Heap
-9. Hashing
+. It’s a complete tree
+.A Binary Heap is either Min Heap or Max Heap.
+scheduling processes in operating systems. Priority Queues are also used in Dijstra’s and Prim’s graph algorithms.
+Order statistics: The Heap data structure can be used to efficiently find the k’th smallest (or largest) element in an array.
 
+9. Hashing
+ .function that converts a given big input key to a small practical integer value.
+Hashing can be used to remove duplicates from a set of elements. Can also be used find frequency of all items
+ in web browsers, we can check visited urls using hashing. In firewalls, we can use hashing to detect spam. We need to hash IP addresses. Hashing can be used in any situation where want search() insert() and delete() in O(1) time.
 
 Time complexity, Math ( permutation, combination) 
 Binary Search , String, Bit Manuplation 
