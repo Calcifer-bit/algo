@@ -36,7 +36,12 @@ Hashing can be used to remove duplicates from a set of elements. Can also be use
  in web browsers, we can check visited urls using hashing. In firewalls, we can use hashing to detect spam. We need to hash IP addresses. Hashing can be used in any situation where want search() insert() and delete() in O(1) time.
 
 Time complexity, Math ( permutation, combination) 
-Binary Search , String, Bit Manuplation 
+Binary Search , String, 
+Bit Manuplation
+ .A B Swap ... 
+   A= A^B 
+   B =A^B 
+   A =A^B
 Linked List, Two potinters , Stacks and Queue
 Heap and Maps , Tree 
 Graph, 
