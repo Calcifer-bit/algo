@@ -51,6 +51,7 @@ Divide & Conquer (   Merge Sort )
 Backtracking
 Tree traverse 
 Priority Queue = Heap 
+Topology Sorting _ implementing to DFS first, 
 
 #DevOps
 Terraform
