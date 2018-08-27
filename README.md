@@ -6,8 +6,8 @@ Linked List, Two potinters , Stacks and Queue
 Heap and Maps , Tree 
 Graph, 
 
- 
-Divide & Conquer ( Insertion sort/ Merge Sort ) 
+Insertion sort
+Divide & Conquer (   Merge Sort ) 
 Backtracking
 Tree traverse 
 Priority Queue = Heap 
@@ -19,7 +19,7 @@ Ansible, Chef
 #Network 
 OSI 7 layer 
 Tracert, IPSec, IPConfig, ping , nslookup,, 
-SSH , SSL Encryption , Public Key , Cipher, AES256, SHA2  
+SSH , SSL Encryption , Public Key , Cipher, AES256, SHA2  , openssl 
 
 #Cache 
 Redis, Memcache, Nginx static Cache 
@@ -38,6 +38,6 @@ NPM Package, package.json build
 Maven Build , Tomcat deployment 
 
 #Python 
- 
+
 
 
