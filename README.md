@@ -83,9 +83,9 @@ Maven Build , Tomcat deployment
 #System Design 
 if you need to design your design carefully, you should focus three requirement topics which are functional, nonfunctional, extended requirements.
 Availability is more important than consistency so a user may not see photo for a while, this is fine.
+  CAP theorem is quite different from the consistency guaranteed in ACID database transactions.
 
-The system can work based on CAP Theorem
-reliability and minimum latency are two main points of consideration.
+The system can work based on CAP Theorem for reliability and minimum latency are two main points of consideration.
   – Client
    – Services
    – Web server
