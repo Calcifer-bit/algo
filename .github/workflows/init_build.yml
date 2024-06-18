@@ -25,7 +25,7 @@ jobs:
   
     - name: Verification 
       run: |
-        echo ${{ josteps.extract.outputs.environment }}
+        echo ${{ steps.extract.outputs.environment }}
         echo ${{ steps.extract.outputs.warname }}
     
   call-workflow:
