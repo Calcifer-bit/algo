@@ -13,9 +13,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 env:
-  environment: dev
-  appname: api
-  warname: default
+  ENVIRONMENT: dev
+  APPNAME: api
+  WARNAME: default
 jobs:
   
   test: 
@@ -32,9 +32,9 @@ jobs:
       run: |
         echo ${{ steps.extract.outputs.environment }}
         echo ${{ steps.extract.outputs.warname }}
-        echo "warname=${{ steps.extract.outputs.warname }}" >> "$GITHUB_ENV"
-        echo "environment=${{ steps.extract.outputs.environment }}" >> "$GITHUB_ENV"
-        echo "appname=${{ steps.extract.outputs.appname }}" >> "$GITHUB_ENV"
+        echo "WARNAME=${{ steps.extract.outputs.warname }}" >> "$GITHUB_ENV"
+        echo "ENVIRONMENT=${{ steps.extract.outputs.environment }}" >> "$GITHUB_ENV"
+        echo "APPNAME=${{ steps.extract.outputs.appname }}" >> "$GITHUB_ENV"
  
   call-workflow:
     needs: 
@@ -45,9 +45,9 @@ jobs:
     uses: ./.github/workflows/build.yml
     with:
           # with 키워드로 넘겨받은 env, region 값으로 판단하여 그에 맞는 빌드를 하겠죠?
-          environment: ${{env.environment}} 
-          appname: ${{env.appname }}
-          warname: ${{env.warname }}
+          environment: $ENVIRONMENT 
+          appname: $APPNAME 
+          warname: $WARNAME
     secrets:
       envPAT: ${{ secrets.envPAT }}
 
