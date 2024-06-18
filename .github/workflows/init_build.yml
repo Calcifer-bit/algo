@@ -14,8 +14,7 @@ on:
   workflow_dispatch:
 env:
   ENVIRONMENT: dev
-  APPNAME: api
-  WARNAME: default
+  APPNAME: api 
 jobs:
   
   test: 
@@ -36,7 +35,7 @@ jobs:
         echo "WARNAME=${{ steps.extract.outputs.warname }}" >> "$GITHUB_ENV"
         echo "APPNAME=${{ steps.extract.outputs.appname }}" >> "$GITHUB_ENV"
         echo "ENVIRONMENT=${{ steps.extract.outputs.environment }}" >> "$GITHUB_ENV"
-        echo "====" $WARNAME
+       
       
  
   call-workflow:
@@ -50,7 +49,7 @@ jobs:
           # with 키워드로 넘겨받은 env, region 값으로 판단하여 그에 맞는 빌드를 하겠죠?
           environment: $ENVIRONMENT 
           appname: $APPNAME 
-          warname: $WARNAME
+          warname: ${{ steps.extract.outputs.warname }}
     secrets:
       envPAT: ${{ secrets.envPAT }}
 
