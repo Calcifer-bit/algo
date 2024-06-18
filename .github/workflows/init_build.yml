@@ -25,16 +25,19 @@ jobs:
       run: |
         echo "environment=dev" >> $GITHUB_OUTPUT
         echo "warname=penup-234234.war" >> $GITHUB_OUTPUT 
-          echo "appname=open" >> $GITHUB_OUTPUT 
+        echo "appname=open" >> $GITHUB_OUTPUT 
       id: extract
   
     - name: Verification 
       run: |
         echo ${{ steps.extract.outputs.environment }}
+        echo ${{ steps.extract.outputs.appname }}
         echo ${{ steps.extract.outputs.warname }}
         echo "WARNAME=${{ steps.extract.outputs.warname }}" >> "$GITHUB_ENV"
-        echo "ENVIRONMENT=${{ steps.extract.outputs.environment }}" >> "$GITHUB_ENV"
         echo "APPNAME=${{ steps.extract.outputs.appname }}" >> "$GITHUB_ENV"
+        echo "ENVIRONMENT=${{ steps.extract.outputs.environment }}" >> "$GITHUB_ENV"
+        echo "====" $WARNAME
+      
  
   call-workflow:
     needs: 
