@@ -23,8 +23,9 @@ jobs:
    steps: 
     - name: Preparation env 
       run: |
-        echo "::set-output name=environment::dev"
-        echo "::set-ouput name=warname::penup-234234.war"
+        echo "environment=dev" >> $GITHUB_OUTPUT
+        echo "warname=penup-234234.war" >> $GITHUB_OUTPUT 
+          echo "appname=open" >> $GITHUB_OUTPUT 
       id: extract
   
     - name: Verification 
@@ -33,7 +34,8 @@ jobs:
         echo ${{ steps.extract.outputs.warname }}
         echo "warname=${{ steps.extract.outputs.warname }}" >> "$GITHUB_ENV"
         echo "environment=${{ steps.extract.outputs.environment }}" >> "$GITHUB_ENV"
-        
+        echo "appname=${{ steps.extract.outputs.appname }}" >> "$GITHUB_ENV"
+       
       env:
           warname: ${{ steps.extract.outputs.warname }}
   call-workflow:
@@ -45,9 +47,9 @@ jobs:
     uses: ./.github/workflows/build.yml
     with:
           # with 키워드로 넘겨받은 env, region 값으로 판단하여 그에 맞는 빌드를 하겠죠?
-          environment: $environment 
-          appname: ${{vars.appname }}
-          warname: $warname 
+          environment: ${{env.environment}} 
+          appname: ${{env.appname }}
+          warname: ${{env.warname }}
     secrets:
       envPAT: ${{ secrets.envPAT }}
 
