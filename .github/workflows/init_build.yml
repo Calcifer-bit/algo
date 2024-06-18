@@ -42,8 +42,8 @@ jobs:
     uses: ./.github/workflows/build.yml
     with:
           # with 키워드로 넘겨받은 env, region 값으로 판단하여 그에 맞는 빌드를 하겠죠?
-          environment: ${{ env.environment }}  
-          warname: ${{env.warname }}
+          environment: ${{ vars.environment }}  
+          warname: ${{vars.warname }}
     secrets:
       envPAT: ${{ secrets.envPAT }}
 
