@@ -14,7 +14,25 @@ on:
   workflow_dispatch:
  
 jobs:
- 
+  test: 
+   runs-on: ubuntu-latest
+   steps: 
+    - name: Preparation env 
+      run: |
+        echo "::set-output name=environment::dev"
+        echo "::set-ouput name=warname::penup-234234.war"
+      id: extract
+    - name: Build
+      uses: actions/checkout@v2
+      with:
+          # with 키워드로 넘겨받은 env, region 값으로 판단하여 그에 맞는 빌드를 하겠죠?
+          environment: ${{ steps.extract.outputs.environment }}
+          warname: ${{ steps.extract.outputs.warname }}
+    - name: Verification 
+      run: |
+        echo ${{env.environment}}
+        echo ${{env.warname}}
+    
   call-workflow:
     permissions:
       contents: read
@@ -24,3 +42,5 @@ jobs:
       config-path: .github/labeler.yml
     secrets:
       envPAT: ${{ secrets.envPAT }}
+
+      
