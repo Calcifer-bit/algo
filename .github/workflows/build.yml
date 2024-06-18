@@ -6,7 +6,13 @@ name: CI
 on:
   workflow_call:
     inputs:
-      config-path:
+      environment:
+        required: true
+        type: string    
+      appname:
+        required: true
+        type: string
+      warname:
         required: true
         type: string
     secrets:
@@ -42,7 +48,9 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          echo ${{ inputs.config-path}}
+          echo ${{ inputs.environment}}
+          echo ${{ inputs.appname}}
+          echo ${{ inputs.warname}}
           echo ${{ secrets.envPAT}}
           
         
