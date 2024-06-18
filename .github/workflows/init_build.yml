@@ -22,24 +22,23 @@ jobs:
         echo "::set-output name=environment::dev"
         echo "::set-ouput name=warname::penup-234234.war"
       id: extract
-    - name: Build
-      uses: actions/checkout@v2
-      with:
-          # with 키워드로 넘겨받은 env, region 값으로 판단하여 그에 맞는 빌드를 하겠죠?
-          environment: ${{ steps.extract.outputs.environment }}
-          warname: ${{ steps.extract.outputs.warname }}
+  
     - name: Verification 
       run: |
-        echo ${{env.environment}}
-        echo ${{env.warname}}
+        echo ${{ josteps.extract.outputs.environment }}
+        echo ${{ steps.extract.outputs.warname }}
     
   call-workflow:
+    needs: 
+      test
     permissions:
       contents: read
       pull-requests: write
     uses: ./.github/workflows/build.yml
     with:
-      config-path: .github/labeler.yml
+          # with 키워드로 넘겨받은 env, region 값으로 판단하여 그에 맞는 빌드를 하겠죠?
+          environment: ${{ jobs.test.steps.extract.outputs.environment }}
+          warname: ${{ jobs.test.steps.extract.outputs.warname }}
     secrets:
       envPAT: ${{ secrets.envPAT }}
 
