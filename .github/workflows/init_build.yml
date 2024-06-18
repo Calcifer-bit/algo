@@ -12,8 +12,12 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
- 
+env:
+  environment: dev
+  appname: api
+  warname: default
 jobs:
+  
   test: 
    runs-on: ubuntu-latest
    steps: 
@@ -27,7 +31,8 @@ jobs:
       run: |
         echo ${{ steps.extract.outputs.environment }}
         echo ${{ steps.extract.outputs.warname }}
-    
+      env:
+          warname: ${{ steps.extract.outputs.warname }}
   call-workflow:
     needs: 
       test
@@ -37,8 +42,8 @@ jobs:
     uses: ./.github/workflows/build.yml
     with:
           # with 키워드로 넘겨받은 env, region 값으로 판단하여 그에 맞는 빌드를 하겠죠?
-          environment: ${{ steps.extract.outputs.environment }}
-          warname: ${{ steps.extract.outputs.warname }}
+          environment: ${{env.environment }}
+          warname: ${{env.warname }}
     secrets:
       envPAT: ${{ secrets.envPAT }}
 
