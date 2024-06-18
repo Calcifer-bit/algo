@@ -35,9 +35,7 @@ jobs:
         echo "warname=${{ steps.extract.outputs.warname }}" >> "$GITHUB_ENV"
         echo "environment=${{ steps.extract.outputs.environment }}" >> "$GITHUB_ENV"
         echo "appname=${{ steps.extract.outputs.appname }}" >> "$GITHUB_ENV"
-       
-      env:
-          warname: ${{ steps.extract.outputs.warname }}
+ 
   call-workflow:
     needs: 
       test
