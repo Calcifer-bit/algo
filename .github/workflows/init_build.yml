@@ -49,7 +49,7 @@ jobs:
           # with 키워드로 넘겨받은 env, region 값으로 판단하여 그에 맞는 빌드를 하겠죠?
           environment: $ENVIRONMENT 
           appname: $APPNAME 
-          warname: ${{ env.WARFILENAME}}
+          warname: $GITHUB_ENV 
     secrets:
       envPAT: ${{ secrets.envPAT }}
 
