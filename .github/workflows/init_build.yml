@@ -19,7 +19,7 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
-    uses: Calcifer-bit/splash-svc/.github/workflows/build.yml@main
+    uses: ./.github/workflows/build.yml
     with:
       config-path: .github/labeler.yml
     secrets:
