@@ -1,3 +1,4 @@
+# This workflow is important practice sharing the variable between two container jobs in a workflow 
 name: Sharing vars within Workflow
 
 on: [push]
