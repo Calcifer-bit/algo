@@ -1,0 +1,26 @@
+name: Sharing vars within Workflow
+
+on: [push]
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    outputs:
+      my_var: ${{ steps.set-output.outputs.my_var }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set output variable
+        id: set-output
+        run: echo "::set-output name=my_var::Hello World"
+
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use variable
+        run: echo "The variable is ${{ needs.job1.outputs.my_var }}"
